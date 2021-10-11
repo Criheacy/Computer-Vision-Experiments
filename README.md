@@ -4,7 +4,7 @@
 
 ## 如何使用 How to Use
 
-> 首先需要说明，整个实验是在 Linux 环境下使用 CMake 编译的；而我使用的是 `WSL2 (Windows Subsystem for Linux)`，因此只提供了源代码和 CMake 编译需要的 `CMakeLists.txt`。
+首先需要说明，整个实验是在 Linux 环境下使用 CMake 编译的；而我使用的是 `WSL2 (Windows Subsystem for Linux)`，因此只提供了源代码、资源文件（比如实验用的图片）和 CMake 编译需要的 `CMakeLists.txt`。
 
 ### 对于 Linux 环境
 
@@ -43,11 +43,11 @@
 	> ./1-contrast-and-saturation
 	> ```
 
-> 对于 `WSL` 用户，运行程序之后可能会出现无法显示图片的问题。参考[这篇回答](https://stackoverflow.com/a/43399827/13876457)和[这篇回答](https://stackoverflow.com/a/68341165/13876457)，大致的解决步骤如下：
-> 
-> 1. 在 WSL 的 linux 系统中设置 `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0`。这条指令可以直接在命令行中输入，也可以存入 `.bashrc` 文件中（永久设置）。它的意思是将窗口显示的信息转换为上传到 `localhost:0.0` 这个端口。
-> 
-> 2. 在 windows 系统中安装 [VcXsrv](https://sourceforge.net/projects/vcxsrv/) 。这个软件的功能是接受来自 `localhost:0.0` 这个端口的信息，并创建一个 GUI 页面来显示它。如果显示连接失败之类的报错，可以考虑将 `XLaunch`（`VcXsrv`的启动器）中 `Disable access control` 选项打开，用于接受来自所有连接的信息。
+对于 `WSL` 用户，运行程序之后可能会出现无法显示图片的问题。参考[这篇回答](https://stackoverflow.com/a/43399827/13876457)和[这篇回答](https://stackoverflow.com/a/68341165/13876457)，大致的解决步骤如下：
+
+1. 在 WSL 的 linux 系统中设置 `export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0`。这条指令可以直接在命令行中输入，也可以存入 `.bashrc` 文件中（永久设置）。它的意思是将窗口显示的信息转换为上传到 `localhost:0.0` 这个端口。
+
+2. 在 windows 系统中安装 [VcXsrv](https://sourceforge.net/projects/vcxsrv/) 。这个软件的功能是接受来自 `localhost:0.0` 这个端口的信息，并创建一个 GUI 页面来显示它。如果显示连接失败之类的报错，可以考虑将 `XLaunch`（`VcXsrv`的启动器）中 `Disable access control` 选项打开，用于接受来自所有连接的信息。
 
 ### 对于 Windows 环境
 
